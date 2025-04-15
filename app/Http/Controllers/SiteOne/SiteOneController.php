@@ -21,7 +21,7 @@ class SiteOneController extends Controller
     }
     public function postcontact()
     {
-        return 'Hallo'
+        return 'Hallo';
     }
     function msg($id=null)
     {
