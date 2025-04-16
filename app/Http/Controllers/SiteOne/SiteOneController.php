@@ -19,10 +19,10 @@ class SiteOneController extends Controller
     {
         return view('SiteOne.contact');
     }
-    public function postcontact()
+    public function postcontact(Request $request)
     {
-        return 'Hallo';
-    }
+        dd($request);
+        }
     function msg($id=null)
     {
         /*

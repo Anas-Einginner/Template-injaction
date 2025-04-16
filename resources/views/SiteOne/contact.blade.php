@@ -49,7 +49,7 @@
         </div>
 
         <div class="col-lg-7">
-          <form  action="{{ route('site1.postcontact') }}"  method="POST" class="php-email-form" >
+          <form  action="{{ route('site1.postcontact') }}"  method="POST"  >
            @csrf
             <div class="row gy-4">
 
@@ -74,11 +74,9 @@
               </div>
 
               <div class="col-md-12 text-center">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+       
 
-                <button type="submit">Send Message</button>
+                <button class="btn btn-primary" type="submit">Send Message</button>
               </div>
 
             </div>
