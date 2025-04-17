@@ -7,6 +7,7 @@ Route::prefix('site1')->name('site1.')->controller(SiteOneController::class)->gr
     Route::get('/home', 'home')->name('home');
     Route::get('/about', 'about')->name('about');
     Route::get('/contact', 'contact')->name('contact');
+    Route::get('/Transporter', 'Transporter')->name('Transporter');
     Route::post('/contact', 'postcontact')->name('postcontact');
    
 });

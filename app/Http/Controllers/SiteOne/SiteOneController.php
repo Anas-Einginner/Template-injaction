@@ -21,8 +21,21 @@ class SiteOneController extends Controller
     }
     public function postcontact(Request $request)
     {
-        dd($request);
+        // dd($request->all());
+        $request -> validate([
+            'name'=>'required',
+            'email'=>'required',
+            'subject'=>'required',
+            'message'=>'required',
+            'image' =>'required'
+        ]);
+        $NameSite ='SiteOne'. '-'. time() . rand() . '.' . $request->file('image')->getClientOriginalExtension();
+        $request->file('image')->move(public_path('uploads'), $NameSite);
+        return redirect()->route('site1.Transporter');
         }
+    function Transporter(){
+        return view('SiteOne.Transporter');
+    }
     function msg($id=null)
     {
         /*
