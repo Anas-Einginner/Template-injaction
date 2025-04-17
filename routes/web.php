@@ -12,3 +12,4 @@ Route::prefix('site1')->name('site1.')->controller(SiteOneController::class)->gr
    
 });
 
+
