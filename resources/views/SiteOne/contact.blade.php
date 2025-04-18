@@ -50,29 +50,17 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-7">
-                        <form action="{{ route('site1.postcontact') }}" method="POST" enctype="multipart/form-data">
+                    <div class="col-lg-7 border-0">
+                        <form action="{{ route('site1.postcontact') }}" method="POST" enctype="multipart/form-data" class=" needs-validation" novalidate>
                             @csrf
-                            {{-- @if ($errors->any())
-             
-           <div class="alert alert-danger" role="alert">
-            <ul>
-              @foreach ($errors->all() as $e)
-                <li>{{$e}}</li>
-              @endforeach
-            </ul>
-          </div>
-           
-
-           @endif --}}
                             <div class="row gy-4">
 
                                 <div class="col-md-6">
                                     <label for="name-field" class="pb-2">Your Name</label>
                                     <input type="text" name="name" id="name-field"
-                                        class="form-control @error('name')
-                   is-invalid
-                @enderror">
+                                        class="form-control shadow-none  @error ('name')
+                                                  is-invalid
+                                            @enderror @if (old('name')) is-valid @endif " value="{{ old('name') }}">
                                     @error('name')
                                         <small class="invalid-feedback">{{ $message }}</small>
                                     @enderror
@@ -81,10 +69,10 @@
                                 <div class="col-md-6">
                                     <label for="email-field" class="pb-2">Your Email</label>
                                     <input type="email"
-                                        class="form-control @error('email')
-                  is-invalid
-                @enderror"
-                                        name="email" id="email-field">
+                                        class="form-control shadow-none @error('email')
+                                            is-invalid
+                                                @enderror  @if(old('name')) is-valid @endif"
+                                        name="email" id="email-field" value="{{ old('email') }}">
                                     @error('email')
                                         <small class="invalid-feedback">{{ $message }}</small>
                                     @enderror
@@ -93,43 +81,42 @@
                                 <div class="col-md-12">
                                     <label for="subject-field" class="pb-2">Subject</label>
                                     <input type="text"
-                                        class="form-control @error('subject')
-                  is-invalid
-                @enderror"
-                                        name="subject" id="subject-field">
+                                        class="form-control  shadow-none @error('subject')
+                                                is-invalid
+                                        @enderror @if(old('name')) is-valid @endif"
+                                        name="subject" id="subject-field" value="{{ old('subject') }}">
                                     @error('subject')
                                         <small class="invalid-feedback">{{ $message }}</small>
                                     @enderror
                                 </div>
                                 <div class="col-md-12">
                                     <label for="subject-field" class="pb-2">Image</label>
-                                    <input type="file" class="form-control" name="image" id="image">
+                                    <input type="file" class="form-control shadow-none " name="image" id="image"value="{{ old('image') }}">
                                     @error('subject')
                                         <small class="invalid-feedback">{{ $message }}</small>
                                     @enderror
+                                    
                                 </div>
 
                                 <div class="col-md-12">
                                     <label for="message-field" class="pb-2">Message</label>
-                                    <textarea class="form-control @error('message')
-                  is-invalid
-                @enderror " name="message"
-                                        rows="10" id="message-field"></textarea>
+                                    <textarea
+                                        class="form-control shadow-none  @error('message')
+                                            is-invalid
+                                        @enderror "
+                                        name="message" rows="10" id ="message-field"></textarea>
                                     @error('message')
                                         <small class="invalid-feedback">{{ $message }}</small>
                                     @enderror
                                 </div>
-
                                 <div class="col-md-12 text-center">
-
-
                                     <button class="btn btn-primary" type="submit">Send Message</button>
                                 </div>
-
                             </div>
                         </form>
                     </div><!-- End Contact Form -->
-
+                  
+                    
                 </div>
 
             </div>
@@ -138,4 +125,3 @@
 
     </main>
 @endsection
-

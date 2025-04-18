@@ -9,7 +9,7 @@ class SiteOneController extends Controller
 {
     function home()
     {
-     return view('SiteOne.home');
+        return view('SiteOne.home');
     }
     function about()
     {
@@ -22,33 +22,32 @@ class SiteOneController extends Controller
     public function postcontact(Request $request)
     {
         // dd($request->all());
-        $request -> validate([
-            'name'=>'required',
-            'email'=>'required',
-            'subject'=>'required',
-            'message'=>'required',
-            'image' =>'required'
+        $request->validate([
+            'name' => 'required|string|min:3|max:255',
+            'email' => 'required',
+            'subject' => 'required ',
+            'message' => 'required',
+            'image' => 'required'
         ]);
-        $NameSite ='SiteOne'. '-'. time() . rand() . '.' . $request->file('image')->getClientOriginalExtension();
+        $NameSite = 'SiteOne' . '-' . time() .'_'. rand() . '.' . $request->file('image')->getClientOriginalExtension();
         $request->file('image')->move(public_path('uploads'), $NameSite);
         return redirect()->route('site1.Transporter');
-        }
-    function Transporter(){
+    }
+    function Transporter()
+    {
         return view('SiteOne.Transporter');
     }
-    function msg($id=null)
+    function msg($id = null)
     {
         /*
         
         */
-        return view('SiteOne.msg')->with('id',$id);
+        return view('SiteOne.msg')->with('id', $id);
         /*
         Way 2
         return view('SiteOne.msg',[
             'id' =>$id
         ]);
         */
-
     }
 }
-

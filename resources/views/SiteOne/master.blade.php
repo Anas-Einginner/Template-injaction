@@ -11,7 +11,9 @@
     <!-- Favicons -->
     <link href="{{asset('SiteOne/assets/img/favicon.png')}}" rel="icon">
     <link href="{{asset('SiteOne/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
-
+ <!-- تضمين Font Awesome -->
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+ <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -112,10 +114,12 @@
     <script src="{{ asset('Siteasset/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
     <script src="{{ asset('Siteasset/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
     <script src="{{ asset('Siteasset/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-
+  
     <!-- Main JS File -->
     <script src="{{ asset('Siteasset/assets/js/main.js') }}"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.min.js"></script>
+    <script>
 </body>
 
 </html>

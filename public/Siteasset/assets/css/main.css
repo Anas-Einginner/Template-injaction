@@ -1429,3 +1429,18 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+.is-valid + .valid-feedback {
+  display: block;
+}
+
+.is-invalid + .invalid-feedback {
+  display: none;
+}
+
+input.is-valid {
+  border-color: #28a745; /* اللون الأخضر */
+}
+
+input.is-invalid {
+  border-color: #dc3545; /* اللون الأحمر */
+}
